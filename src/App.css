@@ -1,0 +1,50 @@
+body {
+  font-family: 'Ubuntu Condensed', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  background: url('wsiebg.jpg') no-repeat fixed;
+  background-size: cover;
+}
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Old Standard TT', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  opacity: 0.5;
+  font-style: italic;
+  font-size: 6em;
+  white-space: nowrap;
+}
+
+h2 {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.Install {
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 3em;
+  width: 6em;
+  margin-top: 3em;
+  font-family: 'Ubuntu Condensed', Arial, Helvetica, sans-serif !important;
+}
+
+.Footer{
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  width:100%;
+  background-color: black;
+  color: white;
+  font-size: 0.25em;
+}
+
+.Footer a {
+  text-decoration: underline;
+  color: white;
+}
