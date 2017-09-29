@@ -7,17 +7,17 @@ class App extends Component {
   render() {
     return (
       <Grid className='App'>
-        <Row>
+        <Row className="Title">
           <Col>
             <h2>Une nouvelle recette à chaque nouvel onglet</h2>
           </Col>
         </Row>
-        <Row>
-          <Col>
+        <Row className="Brand">
+          <Col className="hidden-xs">
             <h1>What should I eat</h1>
           </Col>
         </Row>
-        <Row>
+        <Row className="Download">
           <Col>
             <a href="https://chrome.google.com/webstore/detail/what-should-i-eat-by-ligh/odopgncgnappoijnnfddcipaegjmnihl">
               <Button bsSize="large" bsClass='Install'>Installez</Button>

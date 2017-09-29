@@ -3,23 +3,47 @@ body {
   text-transform: uppercase;
   background: url('wsiebg.jpg') no-repeat fixed;
   background-size: cover;
+  overflow: hidden;
 }
 
 .App {
   text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.Title {
+  margin-top: 4em;
+  height: 20%;
+}
+
+.Brand {
+  height: 10%;
+}
+
+.Download {
+  height: 15%;
 }
 
 h1 {
   font-family: 'Old Standard TT', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  opacity: 0.5;
+  opacity: 0.35;
   font-style: italic;
   font-size: 6em;
-  white-space: nowrap;
 }
 
 h2 {
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0 2em 0 2em;
+}
+
+h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1em;
 }
 
 .Install {
@@ -41,7 +65,7 @@ h2 {
   width:100%;
   background-color: black;
   color: white;
-  font-size: 0.25em;
+  margin: 0 0;
 }
 
 .Footer a {
