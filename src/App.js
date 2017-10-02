@@ -15,6 +15,7 @@ class App extends Component {
         <Row className="Brand">
           <Col className="hidden-xs">
             <h1>What should I eat</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/3HPJBMG1_Rk?rel=0&amp;showinfo=0" frameBorder="0" allowFullScreen></iframe>
           </Col>
         </Row>
         <Row className="Download">
