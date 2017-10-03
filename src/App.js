@@ -47,7 +47,7 @@ class App extends Component {
             { 
               this.state.isChrome 
                 ? buttonToShow
-                : <Button id="install-button" bsSize="large" bsClass='Installed' disabled>Cette application requiert Chrome</Button>
+                : <Button id="install-button" bsSize="large" bsClass='Installed' disabled>Cette application nécessite Chrome</Button>
             }
           </Col>
         </Row>
