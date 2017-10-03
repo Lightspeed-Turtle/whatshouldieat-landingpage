@@ -1,4 +1,5 @@
 /*global chrome*/
+/*global window*/
 
 import React, { Component } from 'react';
 import './App.css';
@@ -10,18 +11,30 @@ class App extends Component {
     super(props);
     this.state = {
       isInstalled: false,
+      isChrome: false,
     };
   }
 
-  thankUser() {
+  componentWillMount() {
+    if (!!window.chrome && !!window.chrome.webstore) {
+      this.setState({ isChrome: true });
+    }
+  }
+
+  handleInstall() {
     this.setState({ isInstalled: true });
   }
 
   install() {
-    chrome.webstore.install("https://chrome.google.com/webstore/detail/odopgncgnappoijnnfddcipaegjmnihl", this.thankUser.bind(this));
+    chrome.webstore.install("https://chrome.google.com/webstore/detail/odopgncgnappoijnnfddcipaegjmnihl", this.handleInstall.bind(this));
   }
 
   render() {
+
+    const buttonToShow = (!this.state.isInstalled
+    ? <Button id="install-button" onClick={this.install.bind(this)} bsSize="large" bsClass='Install'>Installez</Button> 
+    : <Button id="install-button" bsSize="large" bsClass='Installed' disabled>Ouvrez un nouvel onglet !</Button>);
+
     return (
       <Grid className='App'>
         <Row className="Title">
@@ -29,17 +42,12 @@ class App extends Component {
             <h2>Ne cherchez plus.<br /> Laissez les recettes venir à vous automatiquement et gratuitement à chaque nouvel onglet</h2>
           </Col>
         </Row>
-        <Row className="Brand">
-          <Col className="hidden-xs">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/3HPJBMG1_Rk?rel=0&amp;showinfo=0" frameBorder="0" allowFullScreen></iframe>
-          </Col>
-        </Row>
         <Row className="Download">
           <Col>
             { 
-              !this.state.isInstalled 
-              ? <Button id="install-button" onClick={this.install.bind(this)} bsSize="large" bsClass='Install'>Installez</Button> 
-              : <Button id="install-button" bsSize="large" bsClass='Installed' disabled>Merci !</Button> 
+              this.state.isChrome 
+                ? buttonToShow
+                : <Button id="install-button" bsSize="large" bsClass='Installed' disabled>Cette application requiert Chrome</Button>
             }
           </Col>
         </Row>

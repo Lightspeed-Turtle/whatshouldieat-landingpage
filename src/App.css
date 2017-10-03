@@ -23,13 +23,6 @@ body {
   height: 50px;
 }
 
-h1 {
-  font-family: 'Old Standard TT', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  opacity: 0.35;
-  font-style: italic;
-  font-size: 6em;
-}
-
 h2 {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -61,7 +54,6 @@ h3 {
   outline: none;
   text-transform: uppercase;
   font-size: 3em;
-  width: 6em;
   margin-top: 0.5em;
   font-family: 'Ubuntu Condensed', Arial, Helvetica, sans-serif !important;
 }
@@ -79,8 +71,4 @@ h3 {
 .Footer a {
   text-decoration: underline;
   color: white;
-}
-
-.already-installed {
-  content: "Merci !"
 }
