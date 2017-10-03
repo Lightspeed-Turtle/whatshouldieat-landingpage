@@ -1,9 +1,26 @@
+/*global chrome*/
+
 import React, { Component } from 'react';
 import './App.css';
 
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isInstalled: false,
+    };
+  }
+
+  thankUser() {
+    this.setState({ isInstalled: true });
+  }
+
+  install() {
+    chrome.webstore.install("https://chrome.google.com/webstore/detail/odopgncgnappoijnnfddcipaegjmnihl", this.thankUser.bind(this));
+  }
+
   render() {
     return (
       <Grid className='App'>
@@ -14,15 +31,16 @@ class App extends Component {
         </Row>
         <Row className="Brand">
           <Col className="hidden-xs">
-            <h1>What should I eat</h1>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/3HPJBMG1_Rk?rel=0&amp;showinfo=0" frameBorder="0" allowFullScreen></iframe>
           </Col>
         </Row>
         <Row className="Download">
           <Col>
-            <a href="https://chrome.google.com/webstore/detail/what-should-i-eat-by-ligh/odopgncgnappoijnnfddcipaegjmnihl">
-              <Button bsSize="large" bsClass='Install'>Installez</Button>
-            </a>
+            { 
+              !this.state.isInstalled 
+              ? <Button id="install-button" onClick={this.install.bind(this)} bsSize="large" bsClass='Install'>Installez</Button> 
+              : <Button id="install-button" bsSize="large" bsClass='Installed' disabled>Merci !</Button> 
+            }
           </Col>
         </Row>
         <Row className="Footer">

@@ -54,6 +54,18 @@ h3 {
   font-family: 'Ubuntu Condensed', Arial, Helvetica, sans-serif !important;
 }
 
+.Installed {
+  background-color: gray;
+  color: white;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 3em;
+  width: 6em;
+  margin-top: 0.5em;
+  font-family: 'Ubuntu Condensed', Arial, Helvetica, sans-serif !important;
+}
+
 .Footer{
   position:fixed;
   left:0px;
@@ -67,4 +79,8 @@ h3 {
 .Footer a {
   text-decoration: underline;
   color: white;
+}
+
+.already-installed {
+  content: "Merci !"
 }
