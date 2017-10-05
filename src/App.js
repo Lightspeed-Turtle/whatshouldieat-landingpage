@@ -39,7 +39,7 @@ class App extends Component {
       <Grid className='App'>
         <Row className="Title">
           <Col>
-            <h2>Ne cherchez plus.<br /> Laissez les recettes venir à vous automatiquement et gratuitement à chaque nouvel onglet</h2>
+            <h1>Ne cherchez plus.<br /> Laissez les recettes venir à vous automatiquement et gratuitement à chaque nouvel onglet</h1>
           </Col>
         </Row>
         <Row className="Download">
