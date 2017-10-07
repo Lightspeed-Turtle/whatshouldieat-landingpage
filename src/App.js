@@ -79,7 +79,7 @@ class App extends Component {
 
             </Row>
             <footer className="footer">
-              <div className="left"><a onClick={this.handleShareClick} href="#">Partagez</a></div>
+              <div className="left"><a onClick={this.handleShareClick} href="#">Partagez 💛</a></div>
               <div className="right">Une initiative de <a className="underline" target="_blank" href="https://www.facebook.com/lightspeedturtle">Lightspeed Turtle</a></div>
             </footer>
           </div>

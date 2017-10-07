@@ -68,6 +68,9 @@ html, body, .App {
   /* prevents button from going 
   under footer on mobile devices */
   margin-bottom: 6em;
+  border: none;
+  border-radius: initial;
+  text-transform: uppercase;
 }
 
 /* Footer Row */
@@ -85,8 +88,9 @@ h3 {
   line-height: 2em;
   padding-bottom: 0;
   margin-bottom: 0;
-  font-size: 1.5em;
+  font-size: 1.25em;
   color: black;
+  text-transform: uppercase;
 }
 
 .footer a {
