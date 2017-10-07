@@ -1,5 +1,6 @@
 /*global chrome*/
 /*global window*/
+/*global FB*/
 
 import React, { Component } from 'react';
 import './App.css';
@@ -32,6 +33,16 @@ class App extends Component {
     chrome.webstore.install("https://chrome.google.com/webstore/detail/odopgncgnappoijnnfddcipaegjmnihl", this.handleInstall.bind(this));
   }
 
+  handleShareClick() {
+    FB.ui({
+      method: 'share',
+      display: 'popup',
+      hashtag: '#ilovefood',
+      // mobile_iframe: true,
+      href: 'https://www.whatshouldieat.xyz',
+    }, function(response){});
+  }
+
   render() {
 
     const buttonToShow = (!this.state.isInstalled
@@ -58,7 +69,7 @@ class App extends Component {
 
               <Col className="text" lg={6} sm={12}>
                 <h1>What Should I Eat?</h1>
-                <h2>Découvrez quoi manger une nouvelle recette alléchante et inspirante à l’ouverture de chaque nouvel onglet Chrome de votre ordinateur.</h2>
+                <h2>Ne cherchez plus! Découvrez une nouvelle recette alléchante et inspirante à l'ouverture de chaque nouvel onglet Chrome de votre ordinateur.</h2>
                 { 
                   this.state.isChrome 
                     ? buttonToShow
@@ -67,27 +78,16 @@ class App extends Component {
               </Col>
 
             </Row>
+            <footer className="footer">
+              <div className="left"><a onClick={this.handleShareClick} href="#">Partagez</a></div>
+              <div className="right">Une initiative de <a className="underline" target="_blank" href="https://www.facebook.com/lightspeedturtle">Lightspeed Turtle</a></div>
+            </footer>
           </div>
         </Grid>
-        {/* <footer className="footer">
-          <div className="">
-            <p className="text-muted">Place sticky footer content here.</p>
-          </div>
-        </footer> */}
+
       </div>
     );
   }
 }
 
 export default App;
-
-
-{/* <Row className="Download">
-<Col>
-  { 
-    this.state.isChrome 
-      ? buttonToShow
-      : <Button id="install-button" bsSize="large" bsClass='Installed' disabled>Cette application nécessite Chrome</Button>
-  }
-</Col>
-</Row> */}
