@@ -1,9 +1,8 @@
 body {
   font-family: 'Ubuntu Condensed', Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  background: url('wsiebg.jpg') no-repeat fixed;
+  background: url('bg.jpg') no-repeat fixed;
   background-size: cover;
-  overflow: hidden;
+  color: white;
 }
 
 .App {
@@ -14,19 +13,67 @@ body {
   padding: 0 0;
 }
 
-.Title {
-  margin-top: 4em;
-  
+.page-wrap {
+  height: 100vh;
+  width: 100%;
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -2em; 
 }
 
-.Download {
-  height: 50px;
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.logo {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  width: 10vh;
+}
+
+.image {
+	margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+  padding: 0;
+  display: block;
+  width: 57vh;
+}
+
+.content {
+  padding: 0;
+}
+
+.text {
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  h1, h2 {
+    text-align:center !important;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .text {
+    text-align: center !important;
+  }
 }
 
 h1 {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  padding: 0 2em 0 2em;
+  text-align: left;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 4em;
+}
+
+h2 {
+  text-align: left;
+  margin: 0 auto;
+  margin-top: 0.5em;
+
+  font-size: 2.5em;
 }
 
 h3 {
@@ -36,8 +83,8 @@ h3 {
 }
 
 .Install {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   border: none;
   outline: none;
   text-transform: uppercase;
@@ -45,6 +92,9 @@ h3 {
   width: 6em;
   margin-top: 0.5em;
   font-family: 'Ubuntu Condensed', Arial, Helvetica, sans-serif !important;
+  margin: 0 auto;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
 }
 
 .Installed {
@@ -58,17 +108,30 @@ h3 {
   font-family: 'Ubuntu Condensed', Arial, Helvetica, sans-serif !important;
 }
 
-.Footer{
+.install-button {
+}
+
+/* .footer {
   position:fixed;
+  height: 3em;
   left:0px;
   bottom:0px;
   width:100%;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   margin: 0 0;
 }
 
-.Footer a {
+.footer a {
   text-decoration: underline;
-  color: white;
+  color: black;
+} */
+
+.footer, .page-wrap:after {
+  height: 2em; 
+}
+.footer {
+  background: white;
+  color:black;
+  text-transform: uppercase;
 }
