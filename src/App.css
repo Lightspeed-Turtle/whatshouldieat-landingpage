@@ -3,135 +3,79 @@ body {
   background: url('bg.jpg') no-repeat fixed;
   background-size: cover;
   color: white;
+  overflow-y: auto;
 }
 
-.App {
-  text-align: center;
+html, body, .App {
   height: 100%;
   width: 100%;
-  margin: 0 0;
-  padding: 0 0;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
 }
 
-.page-wrap {
-  height: 100vh;
-  width: 100%;
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -2em; 
+@media (min-width: 768px) { 
+  .App {
+    width: 100%;
+  }
 }
 
-.page-wrap:after {
-  content: "";
-  display: block;
+/* Logo Row */
+
+.logo-row {
+  text-align: center;
+  margin: 2.5em 0;
 }
 
 .logo {
-  padding-top: 2em;
-  padding-bottom: 2em;
   width: 10vh;
 }
 
+/* Content Row */
+
+.content-row {
+  text-align: center;
+}
+
 .image {
-	margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2em;
-  padding: 0;
-  display: block;
-  width: 57vh;
+  width: 55vh;
 }
 
-.content {
-  padding: 0;
-}
-
-.text {
-  margin: 0 auto;
-}
-
-@media (max-width: 600px) {
-  h1, h2 {
-    text-align:center !important;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+@media (max-width: 992px) { 
+  h2 {
+    padding: 0 0.5em;
   }
+}
 
+@media (min-width: 1200px) { 
   .text {
-    text-align: center !important;
+    text-align: left;
+  }
+
+  h2 {
+    padding-right: 1em;
   }
 }
 
-h1 {
-  text-align: left;
-  margin: 0 auto;
-  font-weight: bold;
-  font-size: 4em;
+.text > button {
+  margin: 1em 0;
+
+  /* prevents button from going 
+  under footer on mobile devices */
+  margin-bottom: 6em;
 }
 
-h2 {
-  text-align: left;
-  margin: 0 auto;
-  margin-top: 0.5em;
-
-  font-size: 2.5em;
-}
+/* Footer Row */
 
 h3 {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
   font-size: 1em;
 }
 
-.Install {
-  background-color: white;
-  color: black;
-  border: none;
-  outline: none;
-  text-transform: uppercase;
-  font-size: 3em;
-  width: 6em;
-  margin-top: 0.5em;
-  font-family: 'Ubuntu Condensed', Arial, Helvetica, sans-serif !important;
-  margin: 0 auto;
-  margin-top: 0.5em;
-  margin-bottom: 2em;
-}
-
-.Installed {
-  background-color: gray;
-  color: white;
-  border: none;
-  outline: none;
-  text-transform: uppercase;
-  font-size: 3em;
-  margin-top: 0.5em;
-  font-family: 'Ubuntu Condensed', Arial, Helvetica, sans-serif !important;
-}
-
-.install-button {
-}
-
 /* .footer {
-  position:fixed;
-  height: 3em;
-  left:0px;
-  bottom:0px;
-  width:100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
   background-color: white;
-  color: black;
-  margin: 0 0;
-}
-
-.footer a {
-  text-decoration: underline;
-  color: black;
 } */
-
-.footer, .page-wrap:after {
-  height: 2em; 
-}
-.footer {
-  background: white;
-  color:black;
-  text-transform: uppercase;
-}
