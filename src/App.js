@@ -38,7 +38,7 @@ class App extends Component {
       method: 'share',
       display: 'popup',
       hashtag: '#ilovefood',
-      // mobile_iframe: true,
+      mobile_iframe: true,
       href: 'https://www.whatshouldieat.xyz',
     }, function(response){});
   }
