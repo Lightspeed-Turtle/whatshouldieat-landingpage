@@ -9,6 +9,7 @@ import {
   CHECK_IF_CHROME,
   ASK_TO_OPEN_NEW_TAB,
   STOP_DETECTING_LANGUAGE,
+  TOGGLE_SHARE_MODAL,
 } from './constants';
 
 import * as browserService from './browserService';
@@ -18,6 +19,7 @@ const initialState = fromJS({
   isMobileChrome: false,
   extensionIsInstalled: false,
   hasLanguageBeenDetected: false,
+  isShareModalOpen: false,
 });
 
 function homeReducer(state = initialState, action) {
@@ -31,6 +33,9 @@ function homeReducer(state = initialState, action) {
 
     case STOP_DETECTING_LANGUAGE:
       return state.set('hasLanguageBeenDetected', true);
+
+    case TOGGLE_SHARE_MODAL:
+      return state.update('isShareModalOpen', (value) => !value);
 
     default:
       return state;

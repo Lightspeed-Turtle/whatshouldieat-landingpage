@@ -1,5 +1,3 @@
-/* global FB */
-
 /**
  *
  * Home
@@ -19,8 +17,14 @@ import injectReducer from 'utils/injectReducer';
 
 import { FormattedMessage } from 'react-intl';
 
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+
 import { changeLocale } from 'containers/LanguageProvider/actions';
-import { checkIfChrome, installExtension, detectLanguage } from './actions';
+
+import SocialMediaButtons from 'components/SocialMediaButtons';
+
+import { checkIfChrome, installExtension, detectLanguage, toggleShareModal } from './actions';
 
 import logo from './logo.png';
 import laptop from './laptop.png';
@@ -31,16 +35,6 @@ import reducer from './reducer';
 import saga from './saga';
 
 import './index.css';
-
-function handleShareClick() {
-  FB.ui({
-    method: 'share',
-    display: 'popup',
-    hashtag: '#ilovefood',
-    mobile_iframe: true,
-    href: 'https://www.whatshouldieat.xyz',
-  });
-}
 
 export class Home extends React.Component { // eslint-disable-line react/prefer-stateless-function
   componentWillMount() {
@@ -54,7 +48,7 @@ export class Home extends React.Component { // eslint-disable-line react/prefer-
   }
 
   render() {
-    const { promptInstallation, home, changeLanguage } = this.props;
+    const { promptInstallation, home, changeLanguage, toggleShare } = this.props;
 
     const buttonToShow = (!home.extensionIsInstalled
       ? <Button className="install-button" onClick={() => promptInstallation()} bsSize="large"><FormattedMessage {...messages.button_not_installed} /></Button>
@@ -93,7 +87,21 @@ export class Home extends React.Component { // eslint-disable-line react/prefer-
               <div className="left">
                 <a onClick={() => changeLanguage('fr')} href="#lang">FR</a>
                 <a onClick={() => changeLanguage('en')} href="#lang">EN</a>
-                <a onClick={() => handleShareClick()} href="#share"><FormattedMessage {...messages.share} /> <span role="img" aria-label="heart">💛</span></a>
+                <a onClick={() => toggleShare()} href="#share"><FormattedMessage {...messages.share} /> <span role="img" aria-label="heart">💛</span></a>
+                <Dialog
+                  actions={
+                    <FlatButton
+                      label="OK"
+                      primary
+                      keyboardFocused
+                      onClick={() => toggleShare()}
+                    />}
+                  modal
+                  open={home.isShareModalOpen}
+                  bodyStyle={{ padding: 0 }}
+                >
+                  <SocialMediaButtons />
+                </Dialog>
               </div>
 
               <div className="right"><FormattedMessage {...messages.lightspeedturtle} /><a className="underline" target="_blank" href="https://www.facebook.com/lightspeedturtle">Lightspeed Turtle</a></div>
@@ -111,6 +119,7 @@ Home.propTypes = {
   promptInstallation: PropTypes.func.isRequired,
   detectUserLanguage: PropTypes.func.isRequired,
   changeLanguage: PropTypes.func.isRequired,
+  toggleShare: PropTypes.func.isRequired,
   home: PropTypes.any,
 };
 
@@ -124,6 +133,7 @@ function mapDispatchToProps(dispatch) {
     promptInstallation: () => dispatch(installExtension()),
     detectUserLanguage: () => dispatch(detectLanguage()),
     changeLanguage: (locale) => dispatch(changeLocale(locale)),
+    toggleShare: () => dispatch(toggleShareModal()),
   };
 }
 

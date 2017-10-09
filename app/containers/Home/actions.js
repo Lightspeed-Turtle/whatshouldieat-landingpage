@@ -10,6 +10,7 @@ import {
   ASK_TO_OPEN_NEW_TAB,
   DETECT_LANGUAGE,
   STOP_DETECTING_LANGUAGE,
+  TOGGLE_SHARE_MODAL,
 } from './constants';
 
 export function checkIfChrome() {
@@ -39,5 +40,11 @@ export function detectLanguage() {
 export function stopDetectingLanguage() {
   return {
     type: STOP_DETECTING_LANGUAGE,
+  };
+}
+
+export function toggleShareModal() {
+  return {
+    type: TOGGLE_SHARE_MODAL,
   };
 }
