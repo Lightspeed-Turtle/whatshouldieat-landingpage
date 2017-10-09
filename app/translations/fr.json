@@ -4,6 +4,6 @@
   "app.containers.Home.button_not_installed": "Essayez",
   "app.containers.Home.description": "Ne cherchez plus! Découvrez une nouvelle recette alléchante et inspirante à l'ouverture de chaque nouvel onglet Chrome de votre ordinateur.",
   "app.containers.Home.lightspeedturtle": "Une initiative de ",
-  "app.containers.Home.requires_chrome_desktop": "Cette application nécessite Chrome",
+  "app.containers.Home.requires_chrome_desktop": "Nécessite Chrome",
   "app.containers.Home.share": "Partagez"
 }

@@ -4,6 +4,6 @@
   "app.containers.Home.button_not_installed": "Try it",
   "app.containers.Home.description": "Look no further! Discover what to eat with a tantalizing and inspiring new recipe each time you open a new Chrome tab on your computer.",
   "app.containers.Home.lightspeedturtle": "An initiative of ",
-  "app.containers.Home.requires_chrome_desktop": "This application requires Chrome",
+  "app.containers.Home.requires_chrome_desktop": "Requires Chrome",
   "app.containers.Home.share": "Share"
 }

@@ -20,7 +20,7 @@ export default defineMessages({
   },
   requires_chrome_desktop: {
     id: 'app.containers.Home.requires_chrome_desktop',
-    defaultMessage: 'This application requires Chrome',
+    defaultMessage: 'Requires Chrome',
   },
   share: {
     id: 'app.containers.Home.share',
