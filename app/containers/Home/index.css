@@ -1,0 +1,130 @@
+@media (min-width: 768px) { 
+    .App {
+      width: 100%;
+    }
+  }
+  
+  /* Logo Row */
+  
+  .logo-row {
+    text-align: center;
+    margin: 2.5em 0;
+  }
+  
+  .logo {
+    width: 10vh;
+  }
+  
+  /* Content Row */
+
+  h1 {
+    margin-top: 0;
+    font-size: 3em;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+  
+  .content-row {
+    text-align: center;
+  }
+  
+  .image {
+    width: 55vh;
+  }
+  
+  @media (max-width: 992px) { 
+    h2 {
+      padding: 0 0.5em;
+    }
+
+    h1 {
+      margin-top: 1em;
+    }
+  }
+  
+  @media (min-width: 1200px) { 
+    .text {
+      text-align: left;
+    }
+  
+    h2 {
+      padding-right: 1em;
+    }
+  }
+  
+  .text > button {
+    margin: 1em 0;
+    font-size: 2em;
+  
+    /* prevents button from going 
+    under footer on mobile devices */
+    margin-bottom: 6em;
+    border: none;
+    border-radius: initial;
+    text-transform: uppercase;
+  }
+  
+  /* Footer Row */
+  
+  h3 {
+    font-size: 1em;
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    height: 2em;
+    line-height: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-size: 1.25em;
+    color: black;
+    text-transform: uppercase;
+  }
+  
+  .footer a {
+    color: black;
+  }
+  
+  .footer > div {
+    display: inline;
+  }
+  
+  .left, .right {
+    margin: 0 1em;
+  }
+  
+  .left {
+    float: left;
+  }
+
+  .left > a {
+    margin-left: 1em;
+  }
+  
+  .right {
+    float: right;
+  }
+  
+  @media (max-width: 992px) { 
+    .footer > .right {
+      display: none;
+    }
+  
+    .footer {
+      text-align: center;
+    }
+  
+    .left {
+      float: none;
+    }
+  }
+  
+  .underline {
+    text-decoration: underline;
+  }
